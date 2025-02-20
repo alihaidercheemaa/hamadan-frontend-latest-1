@@ -90,20 +90,7 @@
   </head>
 
   <body>
-    <div class="preloader">
-      <div class="preloader__inner">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <!-- /.preloader__inner -->
-    </div>
-    <!-- /.preloader -->
+   
 
     <div class="page-wrapper" >
       <header class="main-header">
@@ -118,6 +105,7 @@
                 <li class="topbar__divider">
                   <span> | </span>
                 </li>
+                
         
                 <li class="topbar__sub-title">
                   <span>A Kashmir Craft Policy Think Tank - Shaping the Future of Artisans</span>
@@ -128,17 +116,24 @@
               <ul class="list-unstyled topbar__links" id="topbar-links">
                 <!-- Links will be injected here based on the user's login status -->
               </ul>
-                  <!-- Left Section -->
-                  <div class="col-md-3 text-center text-md-start mb-4 mb-md-0" style="margin-left: 20px; font-size: 20px;">
-                    <div class="site-footer__social d-flex justify-content-center justify-content-md-start">
-                      <a style="font-size: 15px;" href="https://x.com/artisanvoice?t=aQ_Monm6LFsvuZ8QQtqsaA&s=09" class=""><i
-                          class="fab fa-twitter"></i></a>
-                      <a style="font-size: 15px;" href="https://www.facebook.com/profile.php?id=61567325408681&mibextid=ZbWKwL" class=""><i
-                          class="fab fa-facebook"></i></a>
-                      <a style="font-size: 15px;" href="https://www.linkedin.com/company/105864580/" class="icon_footer"><i
-                          class="fa-brands fa-linkedin"></i></a>
-                      <a style="font-size: 15px;" href="https://www.instagram.com/kashmirhcrf/" class="icon_footer"><i class="fab fa-instagram"></i></a>
-                    </div>
+        
+                    <!-- Left Section -->
+          <div class="col-md-3 text-center text-md-start mb-4 mb-md-0" style="margin-left: 20px; font-size: 20px;">
+            <div class="site-footer__social d-flex justify-content-center justify-content-md-start">
+              <a style="font-size: 15px;" href="https://x.com/artisanvoice?t=aQ_Monm6LFsvuZ8QQtqsaA&s=09" class=""><i
+                  class="fab fa-twitter"></i></a>
+              <a style="font-size: 15px;" href="https://www.facebook.com/profile.php?id=61567325408681&mibextid=ZbWKwL" class=""><i
+                  class="fab fa-facebook"></i></a>
+              <a style="font-size: 15px;" href="https://www.linkedin.com/company/105864580/" class="icon_footer"><i
+                  class="fa-brands fa-linkedin"></i></a>
+              <a style="font-size: 15px;" href="https://www.instagram.com/kashmirhcrf/" class="icon_footer"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+          </div>
+  
+  
+  
+          
             </div>
             <!-- /.topbar__inner -->
           </div>
@@ -153,13 +148,13 @@
       
             
             <ul class="main-menu__list">
-               <li>
-              <a href="index.html" class="home-icon">
-                  <i class="fa fa-home" aria-hidden="true"></i>
-              </a>
-          </li>
+              <li>
+                <a href="index.html" class="home-icon">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+            </li>
               <li class="menu-item-has-children">
-                <a href="#">Research & Policy</a>
+                <a href="">Research & Policy</a>
                 <ul>
                   <li><a href="industry_research.html">Industry Research</a></li>
                   <li><a href="policy_insight.html">Policy In-Sights</a></li>
@@ -172,7 +167,7 @@
       
                 </ul>
               </li>
-              <li class="menu-item-has-children"><a href="#">E Publications</a>
+              <li class="menu-item-has-children"><a href="">E Publications</a>
                 <ul>
       
                   <li><a href="e_publication_best_practies.html">Best Practices</a></li>
@@ -185,11 +180,10 @@
                 </ul>
               </li>
               <li class="menu-item-has-children">
-                <a href="#">Business Support</a>
+                <a href="">Business Support</a>
                 <ul>
                   <li><a href="networking.html">Evaulation & Ranking</a></li>
                   <li><a href="business_certifications.html">Business Certification</a></li>
-
                   <li><a href="grants.html">Grants</a></li>
                   <!-- <li><a href="quality_control.html">Quality Control</a></li> -->
                   <!-- <li><a href="accreditation.html">Accreditations</a></li> -->
@@ -201,7 +195,7 @@
                                     </li> -->
                 </ul>
               </li>
-              <li class="menu-item-has-children"><a href="#">About HCRF</a>
+              <li class="menu-item-has-children"><a href="">About HCRF</a>
                 <ul>
                   <li><a href="mission.html">Mission</a></li>
                   <li><a href="complinance.html">Compliance</a></li>
@@ -1227,6 +1221,7 @@
         </div>
       </div>
     </div>
+  
       <!-- /.mobile-nav__wrapper -->
       
       <div class="search-popup">
@@ -1261,47 +1256,69 @@
       <!-- template js -->
       <script src="assets/js/paroti.js"></script>
       <script src="assets/js/custom.js"></script>
-      <script>
-        // Function to check login status and update the topbar
-        const updateTopbar = () => {
-          const token = localStorage.getItem('authToken'); // Get the token from localStorage
-          const isAdmin = localStorage.getItem('isAdmin') === 'true'; // Get and parse the isAdmin field
-          const topbarLinks = document.getElementById('topbar-links');
-
-          if (token) {
-            // If logged in, check if the user is an admin
-            if (isAdmin) {
-              topbarLinks.innerHTML = `
-              <li><a href="dashboard.html">Admin Dashboard</a></li>
-              <li><a href="#" onclick="logout()">Logout</a></li>
-            `;
-            } else {
-              // If the user is not an admin
-              topbarLinks.innerHTML = `
-              <li><a href="profile.html">Profile</a></li>
-              <li><a href="#" onclick="logout()">Logout</a></li>
-            `;
-            }
-          } else {
-            // If not logged in, show login and register links
-            topbarLinks.innerHTML = `
-            <li><a href="login.html">Login</a></li>
+      
+<script>
+  // Unified function to update both desktop and mobile auth links
+  const updateAuthLinks = () => {
+    const token = localStorage.getItem('authToken');
+    const isAdmin = localStorage.getItem('isAdmin') === 'true';
+    const topbarLinks = document.getElementById('topbar-links');
+    const mobileLinks = document.getElementById('mobile-auth-links');
+  
+    // Common link generation logic
+    const generateLinks = (isLoggedIn, isAdminUser) => {
+      if (isLoggedIn) {
+        if (isAdminUser) {
+          return `
+            <li><a href="dashboard.html">Admin Dashboard</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
           `;
-          }
-        };
+        }
+        return `
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#" onclick="logout()">Logout</a></li>
+        `;
+      }
+      return `
+        <li><a href="login.html">Login</a></li>
+        <li><a href="Register.html">Register</a></li>
+      `;
+    };
+  
+    // Update both navigation elements
+    [topbarLinks, mobileLinks].forEach(container => {
+      if (container) {
+        container.innerHTML = generateLinks(!!token, isAdmin);
+      }
+    });
+  };
+  
+  // Enhanced logout function
+  const logout = () => {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('isAdmin');
+    updateAuthLinks(); // Update both desktop and mobile
+    window.location.href = 'index.html';
+  };
+  
+  // Route protection function
+  const protectRoute = () => {
+    const protectedRoutes = ['/profile.html', '/dashboard.html'];
+    if (protectedRoutes.some(route => window.location.pathname.endsWith(route))) {
+      if (!localStorage.getItem('authToken')) {
+        window.location.href = 'login.html';
+      }
+    }
+  };
+  
+  // Initialize on page load
+  window.onload = () => {
+    updateAuthLinks();
+    protectRoute();
+  };
+  </script>
 
-        // Call updateTopbar on page load
-        window.onload = updateTopbar;
 
-        // Logout function to clear the token and role
-        const logout = () => {
-          localStorage.removeItem('authToken'); // Clear token
-          localStorage.removeItem('isAdmin'); // Clear admin status
-          updateTopbar();  // Update the top bar after logout
-          window.location.href = 'index.html';  // Redirect to the homepage after logout
-        };
-
-      </script>
       <!--Start of Tawk.to Script-->
       <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
